@@ -1,0 +1,40 @@
+﻿@page
+@model CRUDOperations.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit @Model.Customer.Id</h2>
+
+<div class="form">
+    <form class="vehAddForm" method="post">
+        
+            <h3 class="h3"><strong>Vehicle Data:</strong></h3>
+            <br />
+
+            <div asp-validation-summary="All"></div>
+
+            <div> <input class="textbox" placeholder="Brand" asp-for="Customer.Name" /> </div>
+            <span asp-validation-for="Customer.Name"></span>
+
+            <div><input class="textbox" placeholder="Model" asp-for="Customer.Model" /></div>
+            <span asp-validation-for="Customer.Model"></span>
+
+            <div><input class="textbox" placeholder="Year" asp-for="Customer.Year" /></div>
+            <span asp-validation-for="Customer.Year"></span>
+
+            <div> <input class="textbox" placeholder="Engine" asp-for="Customer.Engine" /></div>
+            <span asp-validation-for="Customer.Engine"></span>
+
+            <div><input class="textbox" placeholder="HP" asp-for="Customer.Hp" /></div>
+            <span asp-validation-for="Customer.Hp"></span>
+
+
+
+
+
+            <input class="button" type="submit" name="submit" value="Edit!" />
+            
+</form>
+
+    </div>

@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "CRUD Operations";
+}
+
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Model</td>
+                <td>Year</td>
+                <td>Engine</td>
+                <td>HP</td>
+                <td></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var customer in Model.Customers)  
+            {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Model</td>
+                <td>@customer.Year</td>
+                <td>@customer.Engine</td>
+                <td>@customer.Hp
+
+
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@customer.Id">Edit</a>
+                    <button type="submit" asp-page-handler="delete" asp-route-id="@customer.Id">Delete</button>
+                </td>
+            </tr>
+            }
+           
+            
+        </tbody>
+    </table>
+
+    <a asp-page="./Create">Create</a>
+</form>
